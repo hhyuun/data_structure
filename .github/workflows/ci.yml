@@ -32,7 +32,7 @@ jobs:
 
     - name: SSH and Deploy
       run: |
-        ssh -i .ssh/swyp-key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+        ssh -i swyp-key.pem ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
         PID=$(sudo lsof -t -i:8080)
         exit
         EOF
